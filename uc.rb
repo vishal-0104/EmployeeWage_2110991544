@@ -1,6 +1,6 @@
 def random_number(num)
   if num == 1 
-    puts "Present"
+    puts "Present full day"
 
 
   elsif num==2
@@ -24,12 +24,30 @@ random_number(Attendance)
   partTime = 4
 
 
-  if Attendance == 1
+  # if Attendance == 1
+  #   daily_wage = daily_wage_perHour * total_hour
+  #   puts " Daily wage of the employee is #{daily_wage}"
+
+
+  # elsif Attendance == 2
+  #   partTime_wage = daily_wage_perHour * partTime
+  #   puts "Part time wage of the employee is #{partTime_wage}"
+
+
+  # else
+  #   puts "Employee is absent"
+
+
+  # end
+
+
+  case Attendance
+  when '1'
     daily_wage = daily_wage_perHour * total_hour
     puts " Daily wage of the employee is #{daily_wage}"
 
 
-  elsif Attendance == 2
+  when '2'
     partTime_wage = daily_wage_perHour * partTime
     puts "Part time wage of the employee is #{partTime_wage}"
 
@@ -39,3 +57,4 @@ random_number(Attendance)
 
 
   end
+  
