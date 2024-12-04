@@ -137,4 +137,68 @@ end
 puts "Total working day: #{total_working_day}"
 puts "Total working hour: #{total_working_hour}"
 puts "Total wage for the month: #{total_wage}"
+puts "__________________________________________\n\n"
+
+puts "This is created using class and methods \n\n"
+
+
+class EmployeeWage
+
+
+  Daily_wage_per_Hour = 20
+  Full_time_hour = 8
+  PartTime_hour = 4
+  Max_Working_day = 20
+  Max_Working_hour = 100
+
+
+  def self.calculate_wage
+
+
+    total_wage = 0
+    total_Working_day = 0
+    total_Working_hour = 0
+
+
+    while total_Working_day < Max_Working_day && total_Working_hour < Max_Working_hour
+      total_Working_day += 1
+
+
+      attendance = rand(3)
+
+
+     daily_hour = case attendance
+     when 1
+      Full_time_hour
+     when 2
+      PartTime_hour
+     else
+      0
+     end
+
+
+     daily_wage = daily_hour * Daily_wage_per_Hour
+     total_Working_hour += daily_hour
+     total_wage += daily_wage
+
+
+     daily_status = case Attendance
+     when 1 then "Present full day"
+     when 2 then "Present half day"
+     else "Absent"
+     end
+
+     puts "Day #{total_Working_day}: #{daily_status}, Daily Hour: #{daily_hour}, Daily Wage: #{daily_wage}"
+    end
+
+
+puts "Total working day: #{total_Working_day}"
+puts "Total working hour: #{total_Working_hour}"
+puts "Total wage for the month: #{total_wage}"
   
+    
+  end
+end
+
+
+EmployeeWage.calculate_wage
