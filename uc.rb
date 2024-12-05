@@ -182,7 +182,7 @@ class EmployeeWage
      total_wage += daily_wage
 
 
-     daily_status = case Attendance
+     daily_status = case attendance
      when 1 then "Present full day"
      when 2 then "Present half day"
      else "Absent"
